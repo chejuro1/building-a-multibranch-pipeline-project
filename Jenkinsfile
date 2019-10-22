@@ -32,12 +32,14 @@ pipeline {
         }
     }
 
-  docker {
+    agent {
+        docker {
       image 'jenkinsci/jnlp-slave'
      args '-p 3002:3000 -p 5002:5000'
     customWorkspace '\\home\\ubuntu'
        label 'prod'
       }
+    }
     stage{
         stage('Deploy for production') {
             when {
