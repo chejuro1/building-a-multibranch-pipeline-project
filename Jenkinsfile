@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'jenkins-data:/var/jenkins_home'
+             image 'jenkinsci/jnlp-slave'
             args '-p 3001:3000 -p 5001:5000'
             label 'dev'
         }
@@ -33,10 +33,10 @@ pipeline {
 
 agent {
   docker {
+      image 'jenkinsci/jnlp-slave'
      args '-p 3002:3000 -p 5002:5000'
     customWorkspace '\\home\\ubuntu'
-    image 'jenkinsci/jnlp-slave'
-    label 'prod'
+       label 'prod'
     registryCredentialsId 'chejuro'
     registryUrl 'https://hub.docker.com'
   }
