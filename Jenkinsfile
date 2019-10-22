@@ -47,7 +47,7 @@ agent {
             }
             steps {
                 sh './jenkins/scripts/deploy-for-production.sh'
-                input message: 'Finished using the web site? 
+                input message: 'Finished using the web site?' 
                 sh './jenkins/scripts/kill.sh'
             }
         }
