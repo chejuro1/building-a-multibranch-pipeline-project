@@ -31,16 +31,14 @@ pipeline {
             }
         }
 
-agent {
+
   docker {
       image 'jenkinsci/jnlp-slave'
      args '-p 3002:3000 -p 5002:5000'
     customWorkspace '\\home\\ubuntu'
        label 'prod'
-    registryCredentialsId 'chejuro'
-    registryUrl 'https://hub.docker.com'
-  }
-}
+      }
+
         stage('Deploy for production') {
             when {
                 branch 'production'  
