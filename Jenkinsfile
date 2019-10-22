@@ -30,7 +30,7 @@ pipeline {
                 sh './jenkins/scripts/kill.sh'
             }
         }
-
+    }
 
   docker {
       image 'jenkinsci/jnlp-slave'
@@ -38,7 +38,7 @@ pipeline {
     customWorkspace '\\home\\ubuntu'
        label 'prod'
       }
-
+    stage{
         stage('Deploy for production') {
             when {
                 branch 'production'  
