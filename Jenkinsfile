@@ -8,7 +8,7 @@ pipeline {
    agent {
      kubernetes {
      //cloud 'kubernetes'
-     label 'node:6-alpine'
+     label 'alpine'
      }
   }
     environment {
